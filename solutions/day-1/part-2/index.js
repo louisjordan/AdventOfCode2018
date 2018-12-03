@@ -13,7 +13,7 @@ fs.readFile(path.join(__dirname, '../input.txt'), 'utf-8', (err, data) => {
   while (!found) {
     const freq = Number(deltas[index]) + frequencies[frequencies.length - 1];
 
-    if (frequencies.indexOf(freq) > -1) {
+    if (frequencies.lastIndexOf(freq) > -1) {
       found = true;
     }
 
@@ -23,5 +23,5 @@ fs.readFile(path.join(__dirname, '../input.txt'), 'utf-8', (err, data) => {
   }
 
   console.log('First repeated frequency', frequencies[frequencies.length - 1]);
-  console.log('Time taken:', (Date.now() - start) / 60 + 's');
+  console.log('Time taken:', (Date.now() - start) / 1000 + 's');
 });
