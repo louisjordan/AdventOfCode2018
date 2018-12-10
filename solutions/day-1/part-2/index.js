@@ -1,7 +1,6 @@
-const fs = require('fs');
-const path = require('path');
+const { read } = require('../../../utilities');
 
-fs.readFile(path.join(__dirname, '../input.txt'), 'utf-8', (err, data) => {
+read('../input.txt').then(data => {
   const deltas = data.trim().split('\n');
 
   let found = false;
